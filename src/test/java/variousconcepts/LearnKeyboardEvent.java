@@ -1,7 +1,6 @@
 package variousconcepts;
 
-import java.util.concurrent.TimeUnit;
-
+import java.time.Duration;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -22,7 +21,7 @@ By PASSWORD=By.xpath("//*[@id=\"password\"]");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get("https://www.techfios.com/billing/?ng=admin/");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
 	

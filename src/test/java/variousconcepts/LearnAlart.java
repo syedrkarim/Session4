@@ -1,14 +1,13 @@
 package variousconcepts;
 
-import java.util.concurrent.TimeUnit;
-
+import java.time.Duration;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import junit.framework.Assert;
+//import junit.framework.Assert;
 
 public class LearnAlart {
 
@@ -16,12 +15,12 @@ WebDriver driver;
 	
 	@Before
 	public void initDriver() {
-		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
 	

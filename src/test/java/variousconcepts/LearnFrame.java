@@ -1,7 +1,6 @@
 package variousconcepts;
 
-import java.util.concurrent.TimeUnit;
-
+import java.time.Duration;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -14,12 +13,12 @@ WebDriver driver;
 	
 	@Before
 	public void initDriver() {
-		System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get("https://docs.oracle.com/javase/8/docs/api/");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 	}
 	

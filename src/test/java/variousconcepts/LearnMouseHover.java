@@ -1,11 +1,10 @@
 package variousconcepts;
 
-import java.util.concurrent.TimeUnit;
-
+import java.time.Duration;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+//import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -18,12 +17,12 @@ public class LearnMouseHover {
 		
 		@Before
 		public void initDriver() {
-			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.get("https://www.dell.com/en-us");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		}
 		
@@ -32,8 +31,10 @@ public class LearnMouseHover {
 			
 			
 			Actions action = new Actions(driver);
-			action.moveToElement(driver.findElement(By.xpath("//span[contains(text(),'Products')]"))).build().perform();
-			driver.findElement(By.xpath("//a[text()='Networking']")).click();
+			action.moveToElement(driver.findElement(By.xpath("//button[@class='mh-top-nav-button first-level']"))).build().perform();
+			
+			/*action.moveToElement(driver.findElement(By.xpath("//span[contains(text(),'Products')]"))).build().perform();
+			driver.findElement(By.xpath("//a[text()='Networking']")).click();*/
 			
 		
 		}
